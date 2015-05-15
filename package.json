@@ -9,6 +9,7 @@
   "author": "cyril@dbyzero.com",
   "license": "ISC",
   "dependencies": {
+    "canvas": "^1.2.2",
     "express": "^4.12.3"
   }
 }
