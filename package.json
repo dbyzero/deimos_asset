@@ -2,7 +2,7 @@
   "name": "deimos_asset",
   "version": "0.0.1",
   "description": "Deimos asset generator",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "canvas": "^1.2.2",
-    "express": "^4.12.3"
+    "express": "^4.12.3",
+    "promise": "^7.0.1",
+    "restify": "^3.0.2"
   }
 }
