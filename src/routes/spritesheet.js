@@ -4,10 +4,6 @@ var router			= express.Router();
 var Canvas			= require('canvas');
 var fs				= require('fs');
 var restify			= require('restify');
-// var ItemTemplate	= require('../models/ItemTemplate.js');
-// var MonsterTemplate	= require('../models/MonsterTemplate.js');
-// var AvatarModel		= require('../models/Avatar.js');
-// var _				= require('underscore');
 
 //size of a slide x and y
 const edge = 100;
@@ -59,16 +55,6 @@ function initApi() {
 				// connection:'close'
 			}
 		});
-
-		apiConnection.get('/itemtemplate/'+templateid,function(err,req,res,itemData) {
-			if(err) {
-				console.err(err);
-			}
-			
-			console.log(data);
-			// deferred.resolve(item);
-		});
-
 	}
 }
 
@@ -142,21 +128,21 @@ router.get('/char/:id/spritesheet.png', function(request, res, next) {
 });
 
 function sendFullSpritesheet(res,id,force) {
-	var destImgPath = __dirname.replace('routes','spritesheets/cache/char/cache')+'-'+id+'.png';
+	initApi();
+	var destImgPath = __dirname.replace('routes','cache/char/cache')+'-'+id+'.png';
 	//check if we have to generate it or just send cache
 	fs.exists( destImgPath, function(exists){
 		if(!exists || force == 1) {
 
 			//need avatar to get his items
-			AvatarModel.find({'id':id},function(err,result) {
+			apiConnection.get('/avatar/'+id,function(err,req,res,data) {
 				if(err) throw err;
-				if(result.length === 0) {
+				if(data === null) {
 					res.status(404).send("cannot find the avatar with id "+id);
 					return;
 				}
 
 				//setting some variables to make the spritesheet
-				var data = result[0];
 				var avatarCompo = [
 					data.item_slot_head,
 					data.item_slot_chest,
@@ -261,15 +247,14 @@ function sendFullSpritesheet(res,id,force) {
 						var itemId = item.id;
 						var rgba = item.rgba;
 					}
-					ItemTemplate.find({'id':itemId},function(err,result) {
+					apiConnection.get('/itemtemplate/'+itemId,function(err,req,res,dataItem) {
 						if(err) throw err;
-						if(result.length === 0) {
+						if(dataItem === null) {
 							res.status(404).send("cannot find the item "+itemId);
 							return;
 						}
-						var dataItem = result[0];
 						imgLayers[idx] = new Canvas.Image();
-						imgLayers[idx].src = __dirname.replace('routes','spritesheets/cache/cache')+'-'+itemId+'-'+rgba+'.png';
+						imgLayers[idx].src = __dirname.replace('routes','cache/cache')+'-'+itemId+'-'+rgba+'.png';
 						fs.exists( imgLayers[idx].src ,function(exists){
 							if(!exists || force) {
 								var img = new Canvas.Image();
@@ -299,7 +284,7 @@ function sendFullSpritesheet(res,id,force) {
 
 								out.on('finish',function(err){
 									itemToLoad--;
-									imgLayers[idx].src = __dirname.replace('routes','spritesheets/cache/cache')+'-'+itemId+'-'+rgba+'.png';
+									imgLayers[idx].src = __dirname.replace('routes','cache/cache')+'-'+itemId+'-'+rgba+'.png';
 									if(itemToLoad === 0) {
 										setTimeout(function(){
 											itemLoaded();
@@ -318,7 +303,7 @@ function sendFullSpritesheet(res,id,force) {
 								stream.pipe(out);
 							} else {
 								itemToLoad--;
-								imgLayers[idx].src = __dirname.replace('routes','spritesheets/cache/cache')+'-'+itemId+'-'+rgba+'.png';
+								imgLayers[idx].src = __dirname.replace('routes','cache/cache')+'-'+itemId+'-'+rgba+'.png';
 								if(itemToLoad === 0) {
 									setTimeout(function(){
 										itemLoaded();
@@ -347,14 +332,12 @@ function sendMonsterSpritesheet(res,id,rgba,force){
 	fs.exists( destImgPath, function(exists){
 		if(!exists || force == 1) {
 
-			MonsterTemplate.find({'id':id},function(err,result) {
+			apiConnection.get('/itemtemplate/'+id,function(err,req,res,data) {
 				if(err) throw err;
-				if(result.length === 0) {
+				if(data === null) {
 					res.status(404).send("cannot find the monster!!! Where did he go :O ?!?");
 					return;
 				}
-
-				var data = result[0];
 
 				//get it from img id	
 				var srcImgPath = __dirname.replace('routes','spritesheets')+'/'+data.skin+'.png';
@@ -401,19 +384,17 @@ function sendMonsterSpritesheet(res,id,rgba,force){
 function sendSpritesheet(res,id,rgba,force){
 	initApi();
 	//make it from img id
-	var destImgPath = __dirname.replace('routes','spritesheets/cache/cache')+'-'+id+'-'+rgba+'.png';
+	var destImgPath = __dirname.replace('routes','cache/cache')+'-'+id+'-'+rgba+'.png';
 
 	fs.exists( destImgPath, function(exists){
 		if(!exists || force == 1) {
 
-			ItemTemplate.find({'id':id},function(err,result) {
+			apiConnection.get('/itemtemplate/'+id,function(err,req,res,data) {
 				if(err) throw err;
-				if(result.length === 0) {
+				if(data === null) {
 					res.status(404).send("cannot find the item");
 					return;
 				}
-
-				var data = result[0];
 
 				//show only the item part
 				var show = {
