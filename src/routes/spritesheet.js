@@ -59,8 +59,8 @@ function initApi() {
 }
 
 router.get('/', function(request, res, next) {
+	// initApi();
 	res.send('SPRITESHEET GENERATOR');
-	initApi();
 });
 
 router.get('/item/:id/:rgb/spritesheet.png', function(request, res, next) {
@@ -135,7 +135,7 @@ function sendFullSpritesheet(res,id,force) {
 		if(!exists || force == 1) {
 
 			//need avatar to get his items
-			apiConnection.get('/avatar/'+id,function(err,req,res,data) {
+			apiConnection.get('/avatar/'+id,function(err,req,resp,data) {
 				if(err) throw err;
 				if(data === null) {
 					res.status(404).send("cannot find the avatar with id "+id);
@@ -247,7 +247,7 @@ function sendFullSpritesheet(res,id,force) {
 						var itemId = item.id;
 						var rgba = item.rgba;
 					}
-					apiConnection.get('/itemtemplate/'+itemId,function(err,req,res,dataItem) {
+					apiConnection.get('/itemtemplate/'+itemId,function(err,req,resp,dataItem) {
 						if(err) throw err;
 						if(dataItem === null) {
 							res.status(404).send("cannot find the item "+itemId);
@@ -332,7 +332,7 @@ function sendMonsterSpritesheet(res,id,rgba,force){
 	fs.exists( destImgPath, function(exists){
 		if(!exists || force == 1) {
 
-			apiConnection.get('/itemtemplate/'+id,function(err,req,res,data) {
+			apiConnection.get('/itemtemplate/'+id,function(err,req,resp,data) {
 				if(err) throw err;
 				if(data === null) {
 					res.status(404).send("cannot find the monster!!! Where did he go :O ?!?");
@@ -389,7 +389,7 @@ function sendSpritesheet(res,id,rgba,force){
 	fs.exists( destImgPath, function(exists){
 		if(!exists || force == 1) {
 
-			apiConnection.get('/itemtemplate/'+id,function(err,req,res,data) {
+			apiConnection.get('/itemtemplate/'+id,function(err,req,resp,data) {
 				if(err) throw err;
 				if(data === null) {
 					res.status(404).send("cannot find the item");
@@ -429,6 +429,7 @@ function sendFile(res,destImgPath) {
 		console.error(err);
 		res.send('error');
 	});
+	// res.send('ok');
 	stream.pipe(res);
 }
 
