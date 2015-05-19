@@ -68,9 +68,9 @@ router.get('/item/:id/:rgb/spritesheet.png', function(request, res, next) {
 		var id = parseInt(request.params['id'],10);
 		var rgba = request.params['rgb'];
 		var force = 0;
-		sendSpritesheet(res,id,rgba,force);
+		sendSpritesheet(res,id,rgba,force,next);
 	} catch(err) {
-		console.error(err);
+		next(err);
 	}
 });
 
@@ -79,9 +79,9 @@ router.get('/item/:id/:rgb/force/spritesheet.png', function(request, res, next) 
 		var id = parseInt(request.params['id'],10);
 		var rgba = request.params['rgb'];
 		var force = 1;
-		sendSpritesheet(res,id,rgba,force);
+		sendSpritesheet(res,id,rgba,force,next);
 	} catch(err) {
-		console.error(err);
+		next(err);
 	}
 });
 
@@ -90,9 +90,9 @@ router.get('/monster/:id/color/:rgb/spritesheet.png', function(request, res, nex
 		var id = parseInt(request.params['id'],10);
 		var rgba = request.params['rgb'];
 		var force = 0;
-		sendMonsterSpritesheet(res,id,rgba,force);
+		sendMonsterSpritesheet(res,id,rgba,force,next);
 	} catch(err) {
-		console.error(err);
+		next(err);
 	}
 });
 
@@ -101,9 +101,9 @@ router.get('/monster/:id/color/:rgb/force/spritesheet.png', function(request, re
 		var id = parseInt(request.params['id'],10);
 		var rgba = request.params['rgb'];
 		var force = 1;
-		sendMonsterSpritesheet(res,id,rgba,force);
+		sendMonsterSpritesheet(res,id,rgba,force,next);
 	} catch(err) {
-		console.error(err);
+		next(err);
 	}
 });
 
@@ -111,9 +111,9 @@ router.get('/char/:id/force/spritesheet.png', function(request, res, next) {
 	try {
 		var id = parseInt(request.params['id'],10);
 		var force = 1;
-		sendFullSpritesheet(res,id,force);
+		sendFullSpritesheet(res,id,force,next);
 	} catch(err) {
-		console.error(err);
+		next(err);
 	}
 });
 
@@ -121,13 +121,13 @@ router.get('/char/:id/spritesheet.png', function(request, res, next) {
 	try {
 		var id = parseInt(request.params['id'],10);
 		var force = 0;
-		sendFullSpritesheet(res,id,force);
+		sendFullSpritesheet(res,id,force,next);
 	} catch(err) {
-		console.error(err);
+		next(err);
 	}
 });
 
-function sendFullSpritesheet(res,id,force) {
+function sendFullSpritesheet(res,id,force,next) {
 	initApi();
 	var destImgPath = __dirname.replace('routes','cache/char/cache')+'-'+id+'.png';
 	//check if we have to generate it or just send cache
@@ -325,7 +325,7 @@ function sendFullSpritesheet(res,id,force) {
 }
 
 //send cache file or generate it and send it in repsonse
-function sendMonsterSpritesheet(res,id,rgba,force){
+function sendMonsterSpritesheet(res,id,rgba,force, next){
 	//make it from img id
 	var destImgPath = __dirname.replace('routes','spritesheets/monster/cache')+'-'+id+'-'+rgba+'.png';
 
@@ -381,7 +381,7 @@ function sendMonsterSpritesheet(res,id,rgba,force){
 }
 
 //send cache file or generate it and send it in repsonse
-function sendSpritesheet(res,id,rgba,force){
+function sendSpritesheet(res,id,rgba,force, next){
 	initApi();
 	//make it from img id
 	var destImgPath = __dirname.replace('routes','cache/cache')+'-'+id+'-'+rgba+'.png';
