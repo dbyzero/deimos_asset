@@ -2,12 +2,14 @@
 var express			= require('express');
 var path			= require('path');
 
+var config			= require('./config');
+
 var app = express();
 var appRoute			= require('./routes/app');
 var spritesheetRoute	= require('./routes/spritesheet');
 
 //vars
-app.set('port', 1080);
+app.set('port', config.port);
 app.set('title','Webcraft');
 app.set("env","development");
 

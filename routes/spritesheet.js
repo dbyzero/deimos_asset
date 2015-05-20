@@ -4,6 +4,7 @@ var router			= express.Router();
 var Canvas			= require('canvas');
 var fs				= require('fs');
 var restify			= require('restify');
+var config			= require('../config');
 
 //size of a slide x and y
 const edge = 100;
@@ -49,7 +50,7 @@ var apiConnection = null;
 function initApi() {
 	if(apiConnection === null) {
 		apiConnection = restify.createJsonClient({
-			url: 'http://localhost:1081',
+			url: config.apiStringServer,
 			agent:false,
 			headers:{
 				// connection:'close'
