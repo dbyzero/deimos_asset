@@ -2,6 +2,10 @@ var config = {
 	'localhost': {
 		'apiStringServer' : 'http://localhost:1081',
 		'port' : 1080
+	},
+	'docker': {
+		'apiStringServer' : 'http://api:80',
+		'port' : 80
 	}
 };
 
@@ -18,7 +22,7 @@ for (var idx = process.argv.length - 1; idx >= 0; idx--) {
 	}
 };
 
-if(args['env'] === undefined) throw new Error('No environement specified');
+if(args['env'] === undefined) throw new Error('No environemendt specified');
 if(config[args['env']] === undefined) throw new Error('Unknow environnement');
 
 module.exports = config[args['env']];
