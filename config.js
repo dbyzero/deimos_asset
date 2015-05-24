@@ -1,7 +1,7 @@
 var config = {
 	'localhost': {
 		'apiStringServer' : 'http://localhost:1081',
-		'port' : 1080
+		'port' : 1082
 	},
 	'docker': {
 		'apiStringServer' : 'http://api:80',
