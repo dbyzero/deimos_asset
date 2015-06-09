@@ -327,13 +327,13 @@ function sendFullSpritesheet(res,id,force,next) {
 
 //send cache file or generate it and send it in repsonse
 function sendMonsterSpritesheet(res,id,rgba,force, next){
-	//make it from img id
-	var destImgPath = __dirname.replace('routes','spritesheets/monster/cache')+'-'+id+'-'+rgba+'.png';
+	initApi();
+	var destImgPath = __dirname.replace('routes','cache/monster/')+'-'+id+'-'+rgba+'.png';
 
 	fs.exists( destImgPath, function(exists){
 		if(!exists || force == 1) {
 
-			apiConnection.get('/itemtemplate/'+id,function(err,req,resp,data) {
+			apiConnection.get('/monstertemplate/'+id,function(err,req,resp,data) {
 				if(err) throw err;
 				if(data === null) {
 					res.status(404).send("cannot find the monster!!! Where did he go :O ?!?");
