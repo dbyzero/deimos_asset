@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://www.dbyzero.com/inprogress/ -->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <style>
+            #anim_foot {
+                width:60px;
+                height:60px;
+                background-image:url(./spritesheet_60.png);
+                -webkit-animation: anim-foot 0.8s steps(8) infinite;
+            }
+
+            #anim_hand {
+                width:60px;
+                height:60px;
+                background-image:url(./spritesheet_60.png);
+                -webkit-animation: anim-hand 0.8s steps(8) infinite;
+            }
+
+            #anim_head {
+                width:60px;
+                height:60px;
+                background-image:url(./spritesheet_60.png);
+                -webkit-animation: anim-head 0.8s steps(8) infinite;
+            }
+
+            #anim_body {
+                width:60px;
+                height:60px;
+                background-image:url(./spritesheet_60.png);
+                -webkit-animation: anim-body 0.8s steps(8) infinite;
+            }
+
+            #anim_hand2 {
+                width:60px;
+                height:60px;
+                background-image:url(./spritesheet_60.png);
+                -webkit-animation: anim-hand2 0.8s steps(8) infinite;
+            }
+
+            #anim_full {
+                margin-top:20px;
+                width:60px;
+                height:60px;
+                background-image:url(./spritesheet_60.png);
+                -webkit-animation: anim-full 0.5s steps(8) infinite;
+                display:inline-block;
+            }
+
+            #anim_full_old_char {
+                width:50px;
+                height:62px;
+                background-image:url(./spritesheet_60.png);
+                -webkit-animation: anim-full_old_char 0.8s steps(8) infinite;
+            }
+
+            #anim_full_old_char_walk {
+                width:50px;
+                height:62px;
+                background-image:url(./spritesheet_60.png);
+                -webkit-animation: anim-full_old_char_walk 0.8s steps(8) infinite;
+                display:inline-block;
+            }
+
+            #anim_full_stand {
+                width:50px;
+                height:82px;
+                background-image:url(./spritesheet_60.png);
+                -webkit-animation: anim-stand 0.5s steps(8) infinite;
+                display:inline-block;
+            }
+
+            #anim_attack {
+                width:60px;
+                height:120px;
+                background-image:url(./spritesheet_60.png);
+                -webkit-animation: anim-stand 0.5s steps(8) infinite;
+            }
+
+            @-webkit-keyframes anim-full_old_char_walk{
+                0% {
+                    background-position: 0 -1040px;
+                }
+
+                100% {
+                    background-position: -800px -1040px;
+                }
+            }
+
+            @-webkit-keyframes anim-full_old_char{
+                0% {
+                    background-position: 0 -1100px;
+                }
+
+                100% {
+                    background-position: -800px -1100px;
+                }
+            }
+
+            @-webkit-keyframes anim-full_60{
+                0% {
+                    background-position: 0 0px;
+                }
+
+                100% {
+                    background-position: -480px 0px;
+                }
+            }
+
+            @-webkit-keyframes anim-full{
+                0% {
+                    background-position: 0 0px;
+                }
+
+                100% {
+                    background-position: -480px 0px;
+                }
+            }
+
+            @-webkit-keyframes anim-body{
+                0% {
+                    background-position: 0 -180px;
+                }
+
+                100% {
+                    background-position: -480px -180px;
+                }
+            }
+
+            @-webkit-keyframes anim-foot{
+                0% {
+                    background-position: 0 -120px;
+                }
+
+                100% {
+                    background-position: -480px -120px;
+                }
+            }
+
+            @-webkit-keyframes anim-hand2{
+                0% {
+                    background-position: 0 -60px;
+                }
+
+                100% {
+                    background-position: -480px -60px;
+                }
+            }
+
+            @-webkit-keyframes anim-head{
+                0% {
+                    background-position: 0 -300px;
+                }
+
+                100% {
+                    background-position: -480px -300px;
+                }
+            }
+
+            @-webkit-keyframes anim-hand{
+                0% {
+                    background-position: 0 -240px;
+                }
+
+                100% {
+                    background-position: -480px -240px;
+                }
+            }
+
+            @-webkit-keyframes anim-stand{
+                0% {
+                    background-position: 0 -340px;
+                }
+
+                100% {
+                    background-position: -480px -340px;
+                }
+            }
+
+            @-webkit-keyframes anim-attack{
+                0% {
+                    background-position: 0 -460px;
+                }
+
+                100% {
+                    background-position: -960px -460px;
+                }
+            }
+
+            #move {
+                width:60px;
+                -webkit-animation: anim-move 3000ms linear infinite;
+            }
+
+            @-webkit-keyframes anim-move {
+                0% {
+                    transform: translate(0px,0px);
+                }
+
+                100% {
+                    transform: translate(1000px,0px);
+                }
+            }
+        </style>
+        <script type="text/javascript">
+            window.onkeydown = function(e) {
+               var key = e.keyCode ? e.keyCode : e.which;
+               if (key == 32) {
+                    var elem = document.getElementById('anim_attack');
+                    elem.style.webkitAnimation = 'anim-attack 0.2s steps(8) infinite';
+                    elem.style.width = '120px';
+                    setTimeout(function(){
+                        elem.style.webkitAnimation = 'anim-stand 0.5s steps(8) infinite';
+                        elem.style.width = '60px';
+                    },200);
+               }
+            }
+        </script>
+    <style type="text/css"></style></head>
+    <body data-feedly-mini="yes">
+        <div id="anim_full"></div>
+        <div id="anim_full_stand"></div>
+        <!-- <div id="anim_full_old_char_walk"></div> -->
+        <div id="anim_head"></div>
+        <div id="anim_hand2"></div>
+        <div id="anim_hand"></div>
+        <div id="anim_body"></div>
+        <div id="anim_foot"></div>
+        <div id="anim_attack"></div>
+        <!-- <div id="anim_full_old_char"></div> -->
+        <div id="move">
+            <div id="anim_full"></div>
+        </div>
+    
+
+<div id="feedly-mini" title="feedly Mini tookit"></div></body></html>
