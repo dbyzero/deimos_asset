@@ -204,13 +204,18 @@
             }
         </style>
         <script type="text/javascript">
+            var loop_anim_attack = null;
             window.onkeydown = function(e) {
                var key = e.keyCode ? e.keyCode : e.which;
                if (key == 32) {
                     var elem = document.getElementById('anim_attack');
                     elem.style.webkitAnimation = 'anim-attack 0.2s steps(8) infinite';
                     elem.style.width = '120px';
-                    setTimeout(function(){
+
+                    if(loop_anim_attack) {
+                        clearTimeout(loop_anim_attack);
+                    }
+                    loop_anim_attack = setTimeout(function(){
                         elem.style.webkitAnimation = 'anim-stand 0.5s steps(8) infinite';
                         elem.style.width = '60px';
                     },200);
