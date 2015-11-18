@@ -340,7 +340,7 @@ function sendMonsterSpritesheet(res,id,rgba,force, next){
 					return;
 				}
 
-				//get it from img id	
+				//get it from img id
 				var srcImgPath = __dirname.replace('routes','spritesheets')+'/'+data.skin+'.png';
 
 				fs.stat( srcImgPath,function(err,stats){
@@ -408,7 +408,7 @@ function sendSpritesheet(res,id,rgba,force, next){
 
 				show[data.kind] = true;
 
-				//get it from img id	
+				//get it from img id
 				var srcImgPath = __dirname.replace('routes','spritesheets')+'/'+data.skin+'.png';
 
 				fs.stat( srcImgPath,function(err,stats){

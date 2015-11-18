@@ -13,5 +13,8 @@
     "express": "^4.12.3",
     "promise": "^7.0.1",
     "restify": "^3.0.2"
+  },
+  "devDependencies": {
+    "node-sass": "^3.4.2"
   }
 }

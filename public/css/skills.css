@@ -1,0 +1,12 @@
+.deimos-skill-icon-basic, .icon-skill-fireball, .icon-skill-flashheal {
+  background-image: url(../spritesheet/icons_no_border.png);
+  height: 32px;
+  width: 32px; }
+
+.icon-skill-fireball {
+  background-position: -64px -2080px; }
+
+.icon-skill-flashheal {
+  background-position: -224px -2176px; }
+
+/*# sourceMappingURL=skills.css.map */

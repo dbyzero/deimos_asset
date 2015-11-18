@@ -1,0 +1,3 @@
+@function bgPositionOnGrid($x, $y, $pad) {
+    @return unquote(($x * -1 * $pad) + 'px ' + ($y * -1 * $pad) + 'px');
+}

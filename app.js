@@ -39,10 +39,12 @@ app.use(function(err, req, res, next) {
 // no stacktraces leaked to user if not in development
 app.use(function(err, req, res, next) {
 	res.status(err.status || 500);
-	res.render('error', {
-		message: err.message,
-		error: (app.get('env') === 'development') ? err : {}
-	});
+	console.log(err);
+	res.send('Error',err.status);
+	// res.render('error', {
+	// 	message: err.message,
+	// 	error: (app.get('env') === 'development') ? err : {}
+	// });
 });
 
 /**

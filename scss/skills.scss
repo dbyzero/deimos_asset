@@ -1,0 +1,19 @@
+@import "functions.scss";
+
+$gridPad: 32;
+
+.deimos-skill-icon-basic {
+    background-image: url(../spritesheet/icons_no_border.png);
+    height:32px;
+    width:32px;
+}
+
+.icon-skill-fireball {
+    @extend .deimos-skill-icon-basic;
+    background-position: (bgPositionOnGrid(2, 65, $gridPad));
+}
+
+.icon-skill-flashheal {
+    @extend .deimos-skill-icon-basic;
+    background-position: (bgPositionOnGrid(7, 68, $gridPad));
+}
