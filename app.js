@@ -1,10 +1,11 @@
 //node modules
-var express			= require('express');
-var path			= require('path');
+var express 	= require('express');
+var path 		= require('path');
+var config 		= require('./config');
+var restify 	= require('restify');
 
-var config			= require('./config');
-
-var app = express();
+//Routing
+var app = GLOBAL['app'] = express();
 var appRoute			= require('./routes/app');
 var spritesheetRoute	= require('./routes/spritesheet');
 
@@ -12,6 +13,15 @@ var spritesheetRoute	= require('./routes/spritesheet');
 app.set('port', config.port);
 app.set('title','Webcraft');
 app.set("env","development");
+
+//set api connection
+app.set("apiConnection", restify.createJsonClient({
+   url: config.apiStringServer,
+   agent:false,
+   headers: {
+	  // connection:'close'
+   }
+}));
 
 //setting
 app.enable("strict routing");
@@ -34,17 +44,7 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
 	console.error(err.stack);
 	next(err);
-});
-
-// no stacktraces leaked to user if not in development
-app.use(function(err, req, res, next) {
-	res.status(err.status || 500);
-	console.log(err);
-	res.send('Error',err.status);
-	// res.render('error', {
-	// 	message: err.message,
-	// 	error: (app.get('env') === 'development') ? err : {}
-	// });
+	res.status(500).send('Error');
 });
 
 /**
