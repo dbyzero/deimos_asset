@@ -34,9 +34,8 @@ app.use('/spritesheet', spritesheetRoute);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
-	var err = new Error('Not Found');
-	err.status = 404;
-	next(err);
+    console.log('Unknow ressource : ' + req.originalUrl);
+	res.status(404).send('Not Found');;
 });
 
 /// error handlers
