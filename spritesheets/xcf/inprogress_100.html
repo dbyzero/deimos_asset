@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://www.dbyzero.com/inprogress/ -->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <style>
+            #anim_hand {
+                width:100px;
+                height:100px;
+                background-image:url(./spritesheet_100.png);
+                -webkit-animation: anim-hand 0.8s steps(8) infinite;
+            }
+
+            @-webkit-keyframes anim-hand{
+                0% {
+                    background-position: 0 0px;
+                }
+
+                100% {
+                    background-position: -800px 0px;
+                }
+            }
+            #anim_feet {
+                width:100px;
+                height:100px;
+                background-image:url(./spritesheet_100.png);
+                -webkit-animation: anim-feet 0.8s steps(8) infinite;
+            }
+
+            @-webkit-keyframes anim-feet{
+                0% {
+                    background-position: 0px -100px;
+                }
+
+                100% {
+                    background-position: -800px -100px;
+                }
+            }
+            #anim_all {
+                width:100px;
+                height:100px;
+                background-image:url(./spritesheet_100.png);
+                -webkit-animation: anim-all 0.8s steps(8) infinite;
+            }
+
+            @-webkit-keyframes anim-all{
+                0% {
+                    background-position: 0px -300px;
+                }
+
+                100% {
+                    background-position: -800px -300px;
+                }
+            }
+        </style>
+    <style type="text/css"></style></head>
+    <body data-feedly-mini="yes">
+        <div id="anim_hand"></div>
+        <div id="anim_feet"></div>
+        <div id="anim_all"></div>
+    </body>
+</html>
