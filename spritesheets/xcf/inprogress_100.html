@@ -4,14 +4,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
         <style>
-            #anim_hand {
+            #anim_standR {
                 width:100px;
                 height:100px;
-                background-image:url(./spritesheet_100.png);
-                -webkit-animation: anim-hand 0.8s steps(8) infinite;
+                background-image:url(./test_100.png);
+                -webkit-animation: anim-standR 0.5s steps(8) infinite;
             }
 
-            @-webkit-keyframes anim-hand{
+            @-webkit-keyframes anim-standR{
                 0% {
                     background-position: 0 0px;
                 }
@@ -20,14 +20,14 @@
                     background-position: -800px 0px;
                 }
             }
-            #anim_feet {
+            #anim_standL {
                 width:100px;
                 height:100px;
-                background-image:url(./spritesheet_100.png);
-                -webkit-animation: anim-feet 0.8s steps(8) infinite;
+                background-image:url(./test_100.png);
+                -webkit-animation: anim-standL 0.5s steps(8) infinite;
             }
 
-            @-webkit-keyframes anim-feet{
+            @-webkit-keyframes anim-standL{
                 0% {
                     background-position: 0px -100px;
                 }
@@ -36,14 +36,30 @@
                     background-position: -800px -100px;
                 }
             }
-            #anim_all {
+            #anim_standAR {
                 width:100px;
                 height:100px;
-                background-image:url(./spritesheet_100.png);
-                -webkit-animation: anim-all 0.8s steps(8) infinite;
+                background-image:url(./test_100.png);
+                -webkit-animation: anim-standAR 0.2s steps(8) infinite;
             }
 
-            @-webkit-keyframes anim-all{
+            @-webkit-keyframes anim-standAR{
+                0% {
+                    background-position: 0px -200px;
+                }
+
+                100% {
+                    background-position: -800px -200px;
+                }
+            }
+            #anim_standAL {
+                width:100px;
+                height:100px;
+                background-image:url(./test_100.png);
+                -webkit-animation: anim-standAL 0.2s steps(8) infinite;
+            }
+
+            @-webkit-keyframes anim-standAL{
                 0% {
                     background-position: 0px -300px;
                 }
@@ -52,11 +68,216 @@
                     background-position: -800px -300px;
                 }
             }
+            #run_standR {
+                width:100px;
+                height:100px;
+                background-image:url(./test_100.png);
+                -webkit-animation: run-standR 0.5s steps(8) infinite;
+            }
+
+            @-webkit-keyframes run-standR{
+                0% {
+                    background-position: 0 -400px;
+                }
+
+                100% {
+                    background-position: -800px -400px;
+                }
+            }
+            #run_standL {
+                width:100px;
+                height:100px;
+                background-image:url(./test_100.png);
+                -webkit-animation: run-standL 0.5s steps(8) infinite;
+            }
+
+            @-webkit-keyframes run-standL{
+                0% {
+                    background-position: 0px -500px;
+                }
+
+                100% {
+                    background-position: -800px -500px;
+                }
+            }
+            #run_standAR {
+                width:100px;
+                height:100px;
+                background-image:url(./test_100.png);
+                -webkit-animation: run-standAR 0.5s steps(8) infinite;
+            }
+
+            @-webkit-keyframes run-standAR{
+                0% {
+                    background-position: 0px -600px;
+                }
+
+                100% {
+                    background-position: -800px -600px;
+                }
+            }
+            #run_standAL {
+                width:100px;
+                height:100px;
+                background-image:url(./test_100.png);
+                -webkit-animation: run-standAL 0.5s steps(8) infinite;
+            }
+
+            @-webkit-keyframes run-standAL{
+                0% {
+                    background-position: 0px -700px;
+                }
+
+                100% {
+                    background-position: -800px -700px;
+                }
+            }
+            #anim_flyR {
+                width:100px;
+                height:100px;
+                background-image:url(./test_100.png);
+                -webkit-animation: anim-flyR 0.5s steps(8) infinite;
+            }
+
+            @-webkit-keyframes anim-flyR{
+                0% {
+                    background-position: 0 -800px;
+                }
+
+                100% {
+                    background-position: -800px -800px;
+                }
+            }
+            #anim_flyL {
+                width:100px;
+                height:100px;
+                background-image:url(./test_100.png);
+                -webkit-animation: anim-flyL 0.5s steps(8) infinite;
+            }
+
+            @-webkit-keyframes anim-flyL{
+                0% {
+                    background-position: 0px -900px;
+                }
+
+                100% {
+                    background-position: -800px -900px;
+                }
+            }
+            #anim_flyAR {
+                width:100px;
+                height:100px;
+                background-image:url(./test_100.png);
+                -webkit-animation: anim-flyAR 0.5s steps(8) infinite;
+            }
+
+            @-webkit-keyframes anim-flyAR{
+                0% {
+                    background-position: 0 -1000px;
+                }
+
+                100% {
+                    background-position: -800px -1000px;
+                }
+            }
+            #anim_flyAL {
+                width:100px;
+                height:100px;
+                background-image:url(./test_100.png);
+                -webkit-animation: anim-flyAL 0.5s steps(8) infinite;
+            }
+
+            @-webkit-keyframes anim-flyAL{
+                0% {
+                    background-position: 0px -1100px;
+                }
+
+                100% {
+                    background-position: -800px -1100px;
+                }
+            }
+			#anim_flyUR {
+				width:100px;
+				height:100px;
+				background-image:url(./test_100.png);
+				-webkit-animation: anim-flyUR 0.5s steps(8) infinite;
+			}
+
+			@-webkit-keyframes anim-flyUR{
+				0% {
+					background-position: 0 -1200px;
+				}
+
+				100% {
+					background-position: -800px -1200px;
+				}
+			}
+			#anim_flyUL {
+				width:100px;
+				height:100px;
+				background-image:url(./test_100.png);
+				-webkit-animation: anim-flyUL 0.5s steps(8) infinite;
+			}
+
+			@-webkit-keyframes anim-flyUL{
+				0% {
+					background-position: 0px -1300px;
+				}
+
+				100% {
+					background-position: -800px -1300px;
+				}
+			}
+			#anim_flyUAR {
+				width:100px;
+				height:100px;
+				background-image:url(./test_100.png);
+				-webkit-animation: anim-flyUAR 0.5s steps(8) infinite;
+			}
+
+			@-webkit-keyframes anim-flyUAR{
+				0% {
+					background-position: 0 -1400px;
+				}
+
+				100% {
+					background-position: -800px -1400px;
+				}
+			}
+			#anim_flyUAL {
+				width:100px;
+				height:100px;
+				background-image:url(./test_100.png);
+				-webkit-animation: anim-flyUAL 0.5s steps(8) infinite;
+			}
+
+			@-webkit-keyframes anim-flyUAL{
+				0% {
+					background-position: 0px -1500px;
+				}
+
+				100% {
+					background-position: -800px -1500px;
+				}
+			}
         </style>
     <style type="text/css"></style></head>
     <body data-feedly-mini="yes">
-        <div id="anim_hand"></div>
-        <div id="anim_feet"></div>
-        <div id="anim_all"></div>
+        <div id="anim_standR"></div>
+        <div id="anim_standL"></div>
+        <div id="anim_standAR"></div>
+        <div id="anim_standAL"></div>
+        <div id="run_standR"></div>
+        <div id="run_standL"></div>
+        <div id="run_standAR"></div>
+        <div id="run_standAL"></div>
+        <div id="anim_flyR" style="float:left"></div>
+        <div id="anim_flyL" style="float:left"></div>
+        <div id="anim_flyAR" style="float:left"></div>
+        <div id="anim_flyAL" style="float:left"></div>
+        <div id="anim_flyUR" style="float:left"></div>
+        <div id="anim_flyUL" style="float:left"></div>
+        <div id="anim_flyUAR" style="float:left"></div>
+        <div id="anim_flyUAL" style="float:left"></div>
     </body>
 </html>
