@@ -1,0 +1,64 @@
+.avatar-box {
+    width: 100px;
+    height: 100px;
+}
+
+.avatar-animation-stand-right {
+	@extend .avatar-box;
+	animation: keyframes-animation-row-0-100-100-8-steps 0.5s steps(8) infinite;
+}
+
+.avatar-animation-stand-left {
+	@extend .avatar-box;
+	animation: keyframes-animation-row-1-100-100-8-steps 0.5s steps(8) infinite;
+}
+
+.avatar-animation-stand-attack-right {
+	@extend .avatar-box;
+	animation: keyframes-animation-row-2-100-100-8-steps 0.2s steps(8) infinite;
+}
+
+.avatar-animation-stand-attack-right {
+	@extend .avatar-box;
+	animation: keyframes-animation-row-3-100-100-8-steps 0.2s steps(8) infinite;
+}
+
+.avatar-animation-stand-run-right {
+	@extend .avatar-box;
+	animation: keyframes-animation-row-4-100-100-8-steps 0.5s steps(8) infinite;
+}
+
+.avatar-animation-stand-run-left {
+	@extend .avatar-box;
+	animation: keyframes-animation-row-5-100-100-8-steps 0.5s steps(8) infinite;
+}
+
+.avatar-animation-stand-run-attack-right {
+	@extend .avatar-box;
+	animation: keyframes-animation-row-6-100-100-8-steps 0.5s steps(8) infinite;
+}
+
+.avatar-animation-stand-run-attack-left {
+	@extend .avatar-box;
+	animation: keyframes-animation-row-7-100-100-8-steps 0.5s steps(8) infinite;
+}
+
+.avatar-animation-stand-fly-right {
+	@extend .avatar-box;
+	animation: keyframes-animation-row-8-100-100-8-steps 0.5s steps(8) infinite;
+}
+
+.avatar-animation-stand-fly-left {
+	@extend .avatar-box;
+	animation: keyframes-animation-row-9-100-100-8-steps 0.5s steps(8) infinite;
+}
+
+.avatar-animation-stand-fly-attack-right {
+	@extend .avatar-box;
+	animation: keyframes-animation-row-10-100-100-8-steps 0.5s steps(8) infinite;
+}
+
+.avatar-animation-stand-fly-attack-left {
+	@extend .avatar-box;
+	animation: keyframes-animation-row-11-100-100-8-steps 0.5s steps(8) infinite;
+}
