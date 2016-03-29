@@ -35,4 +35,6 @@ var buildCss = function( filePath, outputFile ) {
 //todo
 
 buildCss('./scss/skills.scss', './public/css/skills.css');
+buildCss('./scss/keyframes.scss', './public/css/keyframes.css');
+buildCss('./scss/animations.scss', './public/css/animations.css');
 // buildCss()

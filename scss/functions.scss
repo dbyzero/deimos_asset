@@ -1,3 +1,25 @@
 @function bgPositionOnGrid($x, $y, $pad) {
     @return unquote(($x * -1 * $pad) + 'px ' + ($y * -1 * $pad) + 'px');
 }
+
+@function backgroundPositionStart($spritesheetRow) {
+    @return unquote('0px ' + $spritesheetRow * -100 + 'px');
+}
+
+@function backgroundPositionEnd($spritesheetRow, $stepTotal) {
+    @return unquote($stepTotal * -100 + 'px ' + $spritesheetRow * -100 + 'px');
+}
+
+
+// @function backgroundPositionFactory($spritesheetRow, $width, $height, $step) {
+//     @return 'keyframes keyframes-animation-row-' + $spritesheetRow + '-' + $width + '-' + $height + '-' + $step + '-steps {
+//         0% {
+//             background-position: 0px ' + $spritesheetRow * -100 + 'px;
+//         }
+
+//         100% {
+//             background-position: '+ $step * -100 + 'px ' + $spritesheetRow * -100 + 'px;
+//         }
+//     };'
+// }
+
