@@ -4,7 +4,7 @@ var config = {
 		'port' : 1082
 	},
 	'docker': {
-		'apiStringServer' : 'http://api:80',
+		'apiStringServer' : 'http://172.19.0.2:80',
 		'port' : 80
 	}
 };

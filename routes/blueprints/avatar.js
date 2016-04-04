@@ -1,7 +1,9 @@
+var CONST_ITEM_SKIN_HEAD_1 = 0;
+var CONST_ITEM_SKIN_HEAD_2 = 0;
 var CONST_ITEM_SKIN_LEFT_HAND_ID = 1;
-var CONST_ITEM_SKIN_RIGHT_HAND_ID = 2;
-var CONST_ITEM_SKIN_FOOT_ID = 3;
-var CONST_ITEM_SKIN_CHEST_ID = 4;
+var CONST_ITEM_SKIN_RIGHT_HAND_ID = 1;
+var CONST_ITEM_SKIN_FOOT_ID = 2;
+var CONST_ITEM_SKIN_CHEST_ID = 3;
 
 var avatarBlueprint = function(avatarObject) {
     this.leftHandData = null;
@@ -10,8 +12,7 @@ var avatarBlueprint = function(avatarObject) {
     this.chestData = null;
     this.headData = null;
     this.init(avatarObject);
-
-    this.partsOrder = this.getDrawPartsOrder();
+    this.layers = this.getDrawPartsOrder();
 }
 
 avatarBlueprint.prototype.init = function (avatarObject) {
@@ -29,25 +30,25 @@ avatarBlueprint.prototype.init = function (avatarObject) {
     var colorChest = avatarObject.item_slot_chest.color || '#ffffff';
 
     //head spritesheed
-    var typeHead1 = avatarObject.item_slot_head.id || '0';
-    var typeHead2 = avatarObject.item_slot_head2.id || '0';
+    var typeHead1 = avatarObject.item_slot_head.id || CONST_ITEM_SKIN_HEAD_1;
+    var typeHead2 = avatarObject.item_slot_head2.id || CONST_ITEM_SKIN_HEAD_2;
     var typeHead = Math.max(typeHead1) + '_' + Math.min(typeHead2);
-    var spritesheetHead = getSpritesheetDirectory() + avatarObject.skin + '/head/' + typeHead + '.png';
+    var spritesheetHead = getSpritesheetDirectory() +  '/avatar/head/' + typeHead + '.png';
 
     //right hand spritesheet
-    var spritesheetRightHand = getSpritesheetDirectory() + avatarObject.skin + '/item/' +
+    var spritesheetRightHand = getSpritesheetDirectory() + '/avatar/handR/' +
         (avatarObject.item_slot_right_hand.id || CONST_ITEM_SKIN_RIGHT_HAND_ID) + '.png';
 
     //left hand spritesheet
-    var spritesheetLeftHand = getSpritesheetDirectory() + avatarObject.skin + '/item/' +
+    var spritesheetLeftHand = getSpritesheetDirectory() + '/avatar/handL/' +
         (avatarObject.item_slot_left_hand.id || CONST_ITEM_SKIN_LEFT_HAND_ID) + '.png';
 
     //foot spritesheet
-    var spritesheetFoot = getSpritesheetDirectory() + avatarObject.skin + '/item/' +
+    var spritesheetFoot = getSpritesheetDirectory() + '/avatar/feet/' +
         (avatarObject.item_slot_foot.id || CONST_ITEM_SKIN_FOOT_ID) + '.png';
 
     //chest spritesheet
-    var spritesheetChest = getSpritesheetDirectory() + avatarObject.skin + '/item/' +
+    var spritesheetChest = getSpritesheetDirectory() + '/avatar/body/' +
         (avatarObject.item_slot_chest.id || CONST_ITEM_SKIN_CHEST_ID) + '.png';
 
     this.leftHandData = {
@@ -93,116 +94,33 @@ avatarBlueprint.prototype.getDrawPartsOrder = function () {
         this.leftHandData,
     ];
 
-    var partsOrder = {
-        'standRight': {
+    var animationType = [
+        "standRight",
+        "standLeft",
+        "attackStandRight",
+        "attackStandLeft",
+        "runRight",
+        "runLeft",
+        "attackRunRight",
+        "attackRunLeft",
+        "flyRight",
+        "flyLeft",
+        "attackFlyRight",
+        "attackFlyLeft"
+    ];
+
+    var partsOrder = animationType.map(function(animation,index){
+        return {
+            'animationName': animation,
             'drawZone': {
                 'x': 0,
-                'y': 0,
-                'width': 1000,
-                'height': 100
+                'y': index * 100, //one animation width is 100px
+                'width': 800, //we are on 8 steps aimation
+                'height': 100 //animation are 100px height
             },
-            'partsOrder' : partsOrderRightOrientation
-        },
-        'standLeft': {
-            'drawZone': {
-                'x': 0,
-                'y': 100,
-                'width': 1000,
-                'height': 100
-            },
-            'partsOrder' : partsOrderLeftOrientation
-        },
-        'attackStandRight': {
-            'drawZone': {
-                'x': 0,
-                'y': 200,
-                'width': 1000,
-                'height': 100
-            },
-            'partsOrder' : partsOrderRightOrientation
-        },
-        'attackStandLeft': {
-            'drawZone': {
-                'x': 0,
-                'y': 300,
-                'width': 1000,
-                'height': 100
-            },
-            'partsOrder' : partsOrderLeftOrientation
-        },
-        'runRight': {
-            'drawZone': {
-                'x': 0,
-                'y': 400,
-                'width': 1000,
-                'height': 100
-            },
-            'partsOrder' : partsOrderRightOrientation
-        },
-        'runLeft': {
-            'drawZone': {
-                'x': 0,
-                'y': 500,
-                'width': 1000,
-                'height': 100
-            },
-            'partsOrder' : partsOrderLeftOrientation
-        },
-        'attackRunRight': {
-            'drawZone': {
-                'x': 0,
-                'y': 600,
-                'width': 1000,
-                'height': 100
-            },
-            'partsOrder' : partsOrderRightOrientation
-        },
-        'attackRunLeft': {
-            'drawZone': {
-                'x': 0,
-                'y': 700,
-                'width': 1000,
-                'height': 100
-            },
-            'partsOrder' : partsOrderLeftOrientation
-        },
-        'flyRight': {
-            'drawZone': {
-                'x': 0,
-                'y': 800,
-                'width': 1000,
-                'height': 100
-            },
-            'partsOrder' : partsOrderRightOrientation
-        },
-        'flyLeft': {
-            'drawZone': {
-                'x': 0,
-                'y': 900,
-                'width': 1000,
-                'height': 100
-            },
-            'partsOrder' : partsOrderLeftOrientation
-        },
-        'attackFlyRight': {
-            'drawZone': {
-                'x': 0,
-                'y': 1000,
-                'width': 1000,
-                'height': 100
-            },
-            'partsOrder' : partsOrderRightOrientation
-        },
-        'attackFlyLeft': {
-            'drawZone': {
-                'x': 0,
-                'y': 1100,
-                'width': 1000,
-                'height': 100
-            },
-            'partsOrder' : partsOrderRightOrientation
-        },
-    }
+            'partsOrder' : index % 2 ? partsOrderLeftOrientation : partsOrderRightOrientation
+        };
+    });
 
     return partsOrder;
 }
@@ -210,5 +128,5 @@ avatarBlueprint.prototype.getDrawPartsOrder = function () {
 module.exports = avatarBlueprint;
 
 var getSpritesheetDirectory = function () {
-    return process.env.PWD + '/spritesheets/';
+    return process.env.PWD + '/spritesheets';
 }

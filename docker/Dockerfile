@@ -1,4 +1,4 @@
-FROM debian:stable
+FROM debian:testing
 MAINTAINER cyril@dbyzero.com
 
 #Auth purpose
