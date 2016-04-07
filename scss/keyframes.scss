@@ -1,6 +1,6 @@
 @import "functions.scss";
 
-keyframes keyframes-animation-row-0-100-100-8-steps {
+@-webkit-keyframes keyframes-animation-row-0-100-100-8-steps {
     0% {
         background-position: backgroundPositionStart(0);
     }
@@ -8,7 +8,7 @@ keyframes keyframes-animation-row-0-100-100-8-steps {
         background-position: backgroundPositionEnd(0, 8);
     }
 };
-keyframes keyframes-animation-row-1-100-100-8-steps {
+@-webkit-keyframes keyframes-animation-row-1-100-100-8-steps {
     0% {
         background-position: backgroundPositionStart(1);
     }
@@ -16,7 +16,7 @@ keyframes keyframes-animation-row-1-100-100-8-steps {
         background-position: backgroundPositionEnd(1, 8);
     }
 };
-keyframes keyframes-animation-row-2-100-100-8-steps {
+@-webkit-keyframes keyframes-animation-row-2-100-100-8-steps {
     0% {
         background-position: backgroundPositionStart(2);
     }
@@ -24,7 +24,7 @@ keyframes keyframes-animation-row-2-100-100-8-steps {
         background-position: backgroundPositionEnd(2, 8);
     }
 };
-keyframes keyframes-animation-row-3-100-100-8-steps {
+@-webkit-keyframes keyframes-animation-row-3-100-100-8-steps {
     0% {
         background-position: backgroundPositionStart(3);
     }
@@ -32,7 +32,7 @@ keyframes keyframes-animation-row-3-100-100-8-steps {
         background-position: backgroundPositionEnd(3, 8);
     }
 };
-keyframes keyframes-animation-row-4-100-100-8-steps {
+@-webkit-keyframes keyframes-animation-row-4-100-100-8-steps {
     0% {
         background-position: backgroundPositionStart(4);
     }
@@ -40,7 +40,7 @@ keyframes keyframes-animation-row-4-100-100-8-steps {
         background-position: backgroundPositionEnd(4, 8);
     }
 };
-keyframes keyframes-animation-row-5-100-100-8-steps {
+@-webkit-keyframes keyframes-animation-row-5-100-100-8-steps {
     0% {
         background-position: backgroundPositionStart(5);
     }
@@ -48,7 +48,7 @@ keyframes keyframes-animation-row-5-100-100-8-steps {
         background-position: backgroundPositionEnd(5, 8);
     }
 };
-keyframes keyframes-animation-row-6-100-100-8-steps {
+@-webkit-keyframes keyframes-animation-row-6-100-100-8-steps {
     0% {
         background-position: backgroundPositionStart(6);
     }
@@ -56,7 +56,7 @@ keyframes keyframes-animation-row-6-100-100-8-steps {
         background-position: backgroundPositionEnd(6, 8);
     }
 };
-keyframes keyframes-animation-row-7-100-100-8-steps {
+@-webkit-keyframes keyframes-animation-row-7-100-100-8-steps {
     0% {
         background-position: backgroundPositionStart(7);
     }
@@ -64,7 +64,7 @@ keyframes keyframes-animation-row-7-100-100-8-steps {
         background-position: backgroundPositionEnd(7, 8);
     }
 };
-keyframes keyframes-animation-row-8-100-100-8-steps {
+@-webkit-keyframes keyframes-animation-row-8-100-100-8-steps {
     0% {
         background-position: backgroundPositionStart(7);
     }
@@ -72,7 +72,7 @@ keyframes keyframes-animation-row-8-100-100-8-steps {
         background-position: backgroundPositionEnd(7, 8);
     }
 };
-keyframes keyframes-animation-row-9-100-100-8-steps {
+@-webkit-keyframes keyframes-animation-row-9-100-100-8-steps {
     0% {
         background-position: backgroundPositionStart(7);
     }
@@ -80,7 +80,7 @@ keyframes keyframes-animation-row-9-100-100-8-steps {
         background-position: backgroundPositionEnd(7, 8);
     }
 };
-keyframes keyframes-animation-row-10-100-100-8-steps {
+@-webkit-keyframes keyframes-animation-row-10-100-100-8-steps {
     0% {
         background-position: backgroundPositionStart(7);
     }
@@ -88,7 +88,7 @@ keyframes keyframes-animation-row-10-100-100-8-steps {
         background-position: backgroundPositionEnd(7, 8);
     }
 };
-keyframes keyframes-animation-row-11-100-100-8-steps {
+@-webkit-keyframes keyframes-animation-row-11-100-100-8-steps {
     0% {
         background-position: backgroundPositionStart(7);
     }
