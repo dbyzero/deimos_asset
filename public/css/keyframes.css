@@ -1,73 +1,107 @@
-keyframes keyframes-animation-row-0-100-100-8-steps 0% {
-  background-position: 0px 0px; }
+@-webkit-keyframes keyframes-animation-row-0-100-100-8-steps {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -800px 0px;
+  }
+}
 
-keyframes keyframes-animation-row-0-100-100-8-steps 100% {
-  background-position: -800px 0px; }
+@-webkit-keyframes keyframes-animation-row-1-100-100-8-steps { 
+  0% {
+    background-position: 0px -100px;
+    }
+  100% {
+    background-position: -800px -100px;
+  }
+}
 
-keyframes keyframes-animation-row-1-100-100-8-steps 0% {
-  background-position: 0px -100px; }
+@-webkit-keyframes keyframes-animation-row-2-100-100-8-steps { 
+  0% {
+    background-position: 0px -200px;
+    }
+  100% {
+    background-position: -800px -200px;
+  }
+}
 
-keyframes keyframes-animation-row-1-100-100-8-steps 100% {
-  background-position: -800px -100px; }
+@-webkit-keyframes keyframes-animation-row-3-100-100-8-steps { 
+  0% {
+    background-position: 0px -300px;
+    }
+  100% {
+    background-position: -800px -300px;
+  }
+}
 
-keyframes keyframes-animation-row-2-100-100-8-steps 0% {
-  background-position: 0px -200px; }
+@-webkit-keyframes keyframes-animation-row-4-100-100-8-steps { 
+  0% {
+    background-position: 0px -400px;
+    }
+  100% {
+    background-position: -800px -400px;
+  }
+}
 
-keyframes keyframes-animation-row-2-100-100-8-steps 100% {
-  background-position: -800px -200px; }
+@-webkit-keyframes keyframes-animation-row-5-100-100-8-steps { 
+  0% {
+    background-position: 0px -500px;
+    }
+  100% {
+    background-position: -800px -500px;
+  }
+}
 
-keyframes keyframes-animation-row-3-100-100-8-steps 0% {
-  background-position: 0px -300px; }
+@-webkit-keyframes keyframes-animation-row-6-100-100-8-steps { 
+  0% {
+    background-position: 0px -600px;
+    }
+  100% {
+    background-position: -800px -600px;
+  }
+}
 
-keyframes keyframes-animation-row-3-100-100-8-steps 100% {
-  background-position: -800px -300px; }
+@-webkit-keyframes keyframes-animation-row-7-100-100-8-steps { 
+  0% {
+    background-position: 0px -700px;
+    }
+  100% {
+    background-position: -800px -700px;
+  }
+}
 
-keyframes keyframes-animation-row-4-100-100-8-steps 0% {
-  background-position: 0px -400px; }
+@-webkit-keyframes keyframes-animation-row-8-100-100-8-steps { 
+  0% {
+    background-position: 0px -800px;
+    }
+  100% {
+    background-position: -800px -800px;
+  }
+}
 
-keyframes keyframes-animation-row-4-100-100-8-steps 100% {
-  background-position: -800px -400px; }
+@-webkit-keyframes keyframes-animation-row-9-100-100-8-steps { 
+  0% {
+    background-position: 0px -900px;
+    }
+  100% {
+    background-position: -800px -900px;
+  }
+}
 
-keyframes keyframes-animation-row-5-100-100-8-steps 0% {
-  background-position: 0px -500px; }
+@-webkit-keyframes keyframes-animation-row-10-100-100-8-steps { 
+  0% {
+    background-position: 0px -1000px;
+    }
+  100% {
+    background-position: -800px -1000px;
+  }
+}
 
-keyframes keyframes-animation-row-5-100-100-8-steps 100% {
-  background-position: -800px -500px; }
-
-keyframes keyframes-animation-row-6-100-100-8-steps 0% {
-  background-position: 0px -600px; }
-
-keyframes keyframes-animation-row-6-100-100-8-steps 100% {
-  background-position: -800px -600px; }
-
-keyframes keyframes-animation-row-7-100-100-8-steps 0% {
-  background-position: 0px -700px; }
-
-keyframes keyframes-animation-row-7-100-100-8-steps 100% {
-  background-position: -800px -700px; }
-
-keyframes keyframes-animation-row-8-100-100-8-steps 0% {
-  background-position: 0px -700px; }
-
-keyframes keyframes-animation-row-8-100-100-8-steps 100% {
-  background-position: -800px -700px; }
-
-keyframes keyframes-animation-row-9-100-100-8-steps 0% {
-  background-position: 0px -700px; }
-
-keyframes keyframes-animation-row-9-100-100-8-steps 100% {
-  background-position: -800px -700px; }
-
-keyframes keyframes-animation-row-10-100-100-8-steps 0% {
-  background-position: 0px -700px; }
-
-keyframes keyframes-animation-row-10-100-100-8-steps 100% {
-  background-position: -800px -700px; }
-
-keyframes keyframes-animation-row-11-100-100-8-steps 0% {
-  background-position: 0px -700px; }
-
-keyframes keyframes-animation-row-11-100-100-8-steps 100% {
-  background-position: -800px -700px; }
-
-/*# sourceMappingURL=keyframes.css.map */
+@-webkit-keyframes keyframes-animation-row-11-100-100-8-steps { 
+  0% {
+    background-position: 0px -1100px;
+    }
+  100% {
+    background-position: -800px -1100px;
+  }
+}

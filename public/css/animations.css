@@ -1,41 +1,51 @@
-.avatar-box, .avatar-animation-stand-right, .avatar-animation-stand-left, .avatar-animation-stand-attack-right, .avatar-animation-stand-run-right, .avatar-animation-stand-run-left, .avatar-animation-stand-run-attack-right, .avatar-animation-stand-run-attack-left, .avatar-animation-stand-fly-right, .avatar-animation-stand-fly-left, .avatar-animation-stand-fly-attack-right, .avatar-animation-stand-fly-attack-left {
+.avatar-box,
+.avatar-animation-stand-right,
+.avatar-animation-stand-left,
+.avatar-animation-stand-attack-right,
+.avatar-animation-run-right,
+.avatar-animation-run-left,
+.avatar-animation-run-attack-right,
+.avatar-animation-run-attack-left,
+.avatar-animation-fly-right,
+.avatar-animation-fly-left,
+.avatar-animation-fly-attack-right,
+.avatar-animation-fly-attack-left {
   width: 100px;
-  height: 100px; }
+  height: 100px;
+}
 
 .avatar-animation-stand-right {
-  animation: keyframes-animation-row-0-100-100-8-steps 0.5s steps(8) infinite; }
+  -webkit-animation: keyframes-animation-row-0-100-100-8-steps 0.5s steps(8) infinite; }
 
 .avatar-animation-stand-left {
-  animation: keyframes-animation-row-1-100-100-8-steps 0.5s steps(8) infinite; }
+  -webkit-animation: keyframes-animation-row-1-100-100-8-steps 0.5s steps(8) infinite; }
 
 .avatar-animation-stand-attack-right {
-  animation: keyframes-animation-row-2-100-100-8-steps 0.2s steps(8) infinite; }
+  -webkit-animation: keyframes-animation-row-2-100-100-8-steps 0.2s steps(8) infinite; }
 
 .avatar-animation-stand-attack-right {
-  animation: keyframes-animation-row-3-100-100-8-steps 0.2s steps(8) infinite; }
+  -webkit-animation: keyframes-animation-row-3-100-100-8-steps 0.2s steps(8) infinite; }
 
-.avatar-animation-stand-run-right {
-  animation: keyframes-animation-row-4-100-100-8-steps 0.5s steps(8) infinite; }
+.avatar-animation-run-right {
+  -webkit-animation: keyframes-animation-row-4-100-100-8-steps 0.5s steps(8) infinite; }
 
-.avatar-animation-stand-run-left {
-  animation: keyframes-animation-row-5-100-100-8-steps 0.5s steps(8) infinite; }
+.avatar-animation-run-left {
+  -webkit-animation: keyframes-animation-row-5-100-100-8-steps 0.5s steps(8) infinite; }
 
-.avatar-animation-stand-run-attack-right {
-  animation: keyframes-animation-row-6-100-100-8-steps 0.5s steps(8) infinite; }
+.avatar-animation-run-attack-right {
+  -webkit-animation: keyframes-animation-row-6-100-100-8-steps 0.5s steps(8) infinite; }
 
-.avatar-animation-stand-run-attack-left {
-  animation: keyframes-animation-row-7-100-100-8-steps 0.5s steps(8) infinite; }
+.avatar-animation-run-attack-left {
+  -webkit-animation: keyframes-animation-row-7-100-100-8-steps 0.5s steps(8) infinite; }
 
-.avatar-animation-stand-fly-right {
-  animation: keyframes-animation-row-8-100-100-8-steps 0.5s steps(8) infinite; }
+.avatar-animation-fly-right {
+  -webkit-animation: keyframes-animation-row-8-100-100-8-steps 0.5s steps(8) infinite; }
 
-.avatar-animation-stand-fly-left {
-  animation: keyframes-animation-row-9-100-100-8-steps 0.5s steps(8) infinite; }
+.avatar-animation-fly-left {
+  -webkit-animation: keyframes-animation-row-9-100-100-8-steps 0.5s steps(8) infinite; }
 
-.avatar-animation-stand-fly-attack-right {
-  animation: keyframes-animation-row-10-100-100-8-steps 0.5s steps(8) infinite; }
+.avatar-animation-fly-attack-right {
+  -webkit-animation: keyframes-animation-row-10-100-100-8-steps 0.5s steps(8) infinite; }
 
-.avatar-animation-stand-fly-attack-left {
-  animation: keyframes-animation-row-11-100-100-8-steps 0.5s steps(8) infinite; }
-
-/*# sourceMappingURL=animations.css.map */
+.avatar-animation-fly-attack-left {
+  -webkit-animation: keyframes-animation-row-11-100-100-8-steps 0.5s steps(8) infinite; }
